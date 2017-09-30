@@ -29,26 +29,16 @@ export default class LedsControl extends Component {
       <View style={styles.container}>
         <Text>Url: {this.state.url}</Text>
 
-        <Button
-          onPress={() => fetch('http://' + this.state.url + '/led1on')}
-          title='Led1 on'
-          color="#673AB7"
-        />
-        <Button
-          onPress={() => fetch('http://' + this.state.url + '/led1off')}
-          title='Led1 off'
-          color="#673AB7"
+        <CustonButton
+          onPressOn={() => fetch('http://' + this.state.url + '/led1on')}
+          onPressOff={() => fetch('http://' + this.state.url + '/led1off')}
+          title='LED 1'
         />
 
-        <Button
-          onPress={() => fetch('http://' + this.state.url + '/led2on')}
-          title='Led2 on'
-          color="#673AB7"
-        />
-        <Button
-          onPress={() => fetch('http://' + this.state.url + '/led2off')}
-          title='Led2 off'
-          color="#673AB7"
+        <CustonButton
+          onPressOn={() => fetch('http://' + this.state.url + '/led2on')}
+          onPressOff={() => fetch('http://' + this.state.url + '/led2off')}
+          title='LED 2'
         />
       </View>
     );
@@ -58,5 +48,7 @@ export default class LedsControl extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
