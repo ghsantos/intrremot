@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -13,13 +14,23 @@ export default class CustonButton extends Component {
     buttonOn: true,
   }
 
+  onPressButton(){
+    if(this.state.buttonOn){
+      this.props.onPressOff(),
+      this.setState({buttonOn: false})
+    } else {
+      this.props.onPressOn(),
+      this.setState({buttonOn: true})
+    }
+  }
+
   render() {
     return (
-      <TouchableOpacity onPress={() => {this.setState({buttonOn: !this.state.buttonOn})}}>
+      <TouchableOpacity onPress={() => this.onPressButton()}>
         <View>
           <View style={this.state.buttonOn ? styles.containerOn : styles.containerOff}>
             {/*<View style={styles.ledStatus}></View>*/}
-            <Text style={styles.text}>LED 1</Text>
+            <Text style={styles.text}>{this.props.title}</Text>
             <Text style={styles.text}>{this.state.buttonOn ? 'ON' : 'OFF'}</Text>
           </View>
         </View>
@@ -27,6 +38,12 @@ export default class CustonButton extends Component {
     );
   }
 }
+
+CustonButton.propTypes = {
+  onPressOn: PropTypes.func.isRequired,
+  onPressOff: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired
+};
 
 const styles = StyleSheet.create({
   containerOn: {
