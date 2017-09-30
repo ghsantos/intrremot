@@ -9,22 +9,18 @@ import {
 } from 'react-native';
 
 export default class CustonButton extends Component {
+  state = {
+    buttonOn: true,
+  }
+
   render() {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => {this.setState({buttonOn: !this.state.buttonOn})}}>
         <View>
-          <View style={styles.container}>
+          <View style={this.state.buttonOn ? styles.containerOn : styles.containerOff}>
             {/*<View style={styles.ledStatus}></View>*/}
             <Text style={styles.text}>LED 1</Text>
-            <Text style={styles.text}>ON</Text>
-          </View>
-        </View>
-
-        <View>
-          <View style={styles.containerOff}>
-            {/*<View style={styles.ledStatusOff}></View>*/}
-            <Text style={styles.text}>LED 2</Text>
-            <Text style={styles.text}>OFF</Text>
+            <Text style={styles.text}>{this.state.buttonOn ? 'ON' : 'OFF'}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -33,10 +29,10 @@ export default class CustonButton extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerOn: {
     margin: 10,
     backgroundColor: "#5E35B1",
-    borderColor: "#673AB7",
+    borderColor: "#532e96",
     borderWidth: 6,
     alignItems: 'center',
     justifyContent: 'center',
@@ -59,8 +55,8 @@ const styles = StyleSheet.create({
   },
   containerOff: {
     margin: 10,
-    backgroundColor: "#2b135a",
-    borderColor: "#3e1e79",
+    backgroundColor: "#14082e",
+    borderColor: "#32195e",
     borderWidth: 6,
     alignItems: 'center',
     justifyContent: 'center',
