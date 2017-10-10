@@ -1,4 +1,3 @@
-
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
@@ -117,5 +116,4 @@ void handleNotFound() {
 	}
 
 	server.send ( 404, "text/plain", message );
-	digitalWrite ( led, 0 );
 }
