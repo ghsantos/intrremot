@@ -18,8 +18,8 @@ export default class HomeScreen extends Component {
     text: ''
   }
 
-  goToControl(url){
-    this.props.navigation.navigate('control', { url })
+  goToControl(url) {
+    this.props.navigation.navigate('control', { url });
   }
 
   render() {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    'alignItems': 'center',
+    alignItems: 'center',
   },
 
   input: {

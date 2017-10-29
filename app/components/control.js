@@ -2,13 +2,12 @@
 
 import React, { Component } from 'react';
 import {
-  Button,
   View,
   Text,
   StyleSheet,
 } from 'react-native';
 
-import CustonButton from './CustonButton'
+import CustonButton from './CustonButton';
 
 export default class LedsControl extends Component {
   static navigationOptions = {
@@ -19,9 +18,9 @@ export default class LedsControl extends Component {
     url: ''
   }
 
-  componentWillMount(){
-    const url = this.props.navigation.state.params.url
-    this.setState({ url })
+  componentWillMount() {
+    const url = this.props.navigation.state.params.url;
+    this.setState({ url });
   }
 
   render() {

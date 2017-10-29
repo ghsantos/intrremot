@@ -14,13 +14,13 @@ export default class CustonButton extends Component {
     buttonOn: true,
   }
 
-  onPressButton(){
-    if(this.state.buttonOn){
-      this.props.onPressOff(),
-      this.setState({buttonOn: false})
+  onPressButton() {
+    if (this.state.buttonOn) {
+      this.props.onPressOff();
+      this.setState({ buttonOn: false });
     } else {
-      this.props.onPressOn(),
-      this.setState({buttonOn: true})
+      this.props.onPressOn();
+      this.setState({ buttonOn: true });
     }
   }
 
@@ -48,8 +48,8 @@ CustonButton.propTypes = {
 const styles = StyleSheet.create({
   containerOn: {
     margin: 10,
-    backgroundColor: "#5E35B1",
-    borderColor: "#532e96",
+    backgroundColor: '#5E35B1',
+    borderColor: '#532e96',
     borderWidth: 6,
     alignItems: 'center',
     justifyContent: 'center',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   ledStatus: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#fff',
     width: 14,
     height: 14,
     borderRadius: 7,
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
   },
   containerOff: {
     margin: 10,
-    backgroundColor: "#14082e",
-    borderColor: "#32195e",
+    backgroundColor: '#14082e',
+    borderColor: '#32195e',
     borderWidth: 6,
     alignItems: 'center',
     justifyContent: 'center',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   ledStatusOff: {
-    backgroundColor: "#302a3a",
+    backgroundColor: '#302a3a',
     width: 14,
     height: 14,
     borderRadius: 7,
