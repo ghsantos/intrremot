@@ -29,14 +29,14 @@ export default class LedsControl extends Component {
         <Text>Url: {this.state.url}</Text>
 
         <CustonButton
-          onPressOn={() => fetch('http://' + this.state.url + '/led1on')}
-          onPressOff={() => fetch('http://' + this.state.url + '/led1off')}
+          onPressOn={() => fetch(`http://${this.state.url}/led1on`)}
+          onPressOff={() => fetch(`http://${this.state.url}/led1off`)}
           title='LED 1'
         />
 
         <CustonButton
-          onPressOn={() => fetch('http://' + this.state.url + '/led2on')}
-          onPressOff={() => fetch('http://' + this.state.url + '/led2off')}
+          onPressOn={() => fetch(`http://${this.state.url}/led2on`)}
+          onPressOff={() => fetch(`http://${this.state.url}/led2off`)}
           title='LED 2'
         />
       </View>
