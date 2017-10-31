@@ -11,7 +11,11 @@ import CustonButton from './CustonButton';
 
 export default class LedsControl extends Component {
   static navigationOptions = {
-    title: 'Leds Control'
+    title: 'Leds Control',
+    headerTintColor: '#fff',
+    headerStyle: {
+      backgroundColor: '#673AB7',
+    },
   }
 
   state = {

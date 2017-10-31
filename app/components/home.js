@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import {
   Button,
   View,
+  StatusBar,
   Text,
   TextInput,
   StyleSheet,
@@ -11,7 +12,11 @@ import {
 
 export default class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Intrremot'
+    title: 'Intrremot',
+    headerTintColor: '#fff',
+    headerStyle: {
+      backgroundColor: '#673AB7',
+    },
   }
 
   state = {
@@ -25,6 +30,8 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar backgroundColor='#673AB7' />
+
         <Text style={styles.text}>NodeMcu Url:</Text>
 
         <TextInput
