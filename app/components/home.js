@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor='#673AB7' />
 
-        <Text style={styles.text}>NodeMcu Url:</Text>
+        <Text style={styles.text}>NodeMCU Url:</Text>
 
         <TextInput
           style={styles.input}
@@ -40,11 +40,13 @@ export default class HomeScreen extends Component {
           value={this.state.text}
         />
 
-        <Button
-          onPress={() => this.goToControl(this.state.text)}
-          title="Ok"
-          color="#673AB7"
-        />
+        <View style={styles.button}>
+          <Button
+            onPress={() => this.goToControl(this.state.text)}
+            title="Ok"
+            color="#673AB7"
+          />
+        </View>
       </View>
     );
   }
@@ -64,5 +66,10 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 20,
-  }
+  },
+
+  button: {
+    width: 150,
+    padding: 15,
+  },
 });
