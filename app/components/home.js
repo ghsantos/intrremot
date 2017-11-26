@@ -38,13 +38,19 @@ export default class HomeScreen extends Component {
           style={styles.input}
           onChangeText={text => this.setState({ text })}
           value={this.state.text}
+          placeholder='Url'
+          keyboardType='url'
+          underlineColorAndroid='rgba(0, 0, 0, 0)'
+          autoCorrect={false}
+          autoFocus
+          onSubmitEditing={() => this.goToControl(this.state.text)}
         />
 
         <View style={styles.button}>
           <Button
             onPress={() => this.goToControl(this.state.text)}
-            title="Ok"
-            color="#673AB7"
+            title='Ok'
+            color='#673AB7'
           />
         </View>
       </View>
@@ -60,16 +66,20 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    width: 300,
-    height: 50,
+    width: 310,
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: 6,
+    padding: 10,
   },
 
   text: {
     fontSize: 20,
+    padding: 10,
   },
 
   button: {
     width: 150,
-    padding: 15,
+    padding: 10,
   },
 });
